@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="public/fish.jpeg">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memerist</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/src/css/memerist.css" />
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <nav>
+                    <a href="#screenshots">Screenshots</a>
+                    <a href="#features">Features</a>
+                    <a href="#install">Install</a>
+                    <a
+                        href="https://github.com/vani-tty1/memerist"
+                        target="_blank"
+                        rel="noopener"
+                        >Source</a
+                    >
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <img
+                    class="app-icon"
+                    src="https://github.com/vani-tty1/memerist/raw/main/data/icons/hicolor/scalable/apps/io.github.vani_tty1.memerist.svg"
+                    alt="Memerist icon"
+                    onerror="
+                        this.src =
+                            'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><rect width=%22128%22 height=%22128%22 rx=%2228%22 fill=%22%233584e4%22/><text y=%2282%22 x=%2264%22 text-anchor=%22middle%22 font-size=%2264%22>😂</text></svg>'
+                    "
+                />
+                <h1>Memerist</h1>
+                <p class="tagline">
+                    A simple meme editor for Linux.<br/>
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="https://flathub.org/apps/details/io.github.vani_tty1.memerist"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <img
+                            class="flathub-badge"
+                            src="https://flathub.org/api/badge?locale=en"
+                            alt="Get it on Flathub"
+                            onerror="
+                                this.style.display = 'none';
+                                this.nextSibling.style.display = 'flex';
+                            "
+                        />
+                        <span class="btn btn-primary" style="display: none">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14H9V8l6 4-6 4z"
+                                />
+                            </svg>
+                            Get on Flathub
+                        </span>
+                    </a>
+                    <a
+                        class="btn btn-secondary copr-btn"
+                        href="https://copr.fedorainfracloud.org/coprs/vaniiiiii/memerist/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <img src="/public/copr_logo.png" style="width: 42px; height: 24px; vertical-align: middle; margin-right: 8px;">
+                        Fedora COPR
+                    </a>
+                    <a
+                        class="btn btn-secondary"
+                        href="https://github.com/vani-tty1/memerist"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <img src="/public/github-mark.svg" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="screenshots">
+            <div class="section-inner">
+                <p class="section-label">Screenshots</p>
+                <h2 class="section-title">Usage</h2>
+
+                <div class="screenshots-wrap">
+                    <div class="screenshots-track" id="track">
+                        <div class="screenshot-item">
+                            <div class="screenshot-frame">
+                                <img
+                                    src="https://raw.githubusercontent.com/vani-tty1/vani-tty1.github.io/main/uploads/screenshot1.png"
+                                    alt="Memerist screenshot 1 — meme template editor"
+                                    loading="eager"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <div class="screenshot-frame">
+                                <img
+                                    src="https://raw.githubusercontent.com/vani-tty1/vani-tty1.github.io/main/uploads/screenshot2.png"
+                                    alt="Memerist screenshot 2 — text overlay and layers"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <div class="screenshot-frame">
+                                <img
+                                    src="https://raw.githubusercontent.com/vani-tty1/vani-tty1.github.io/main/uploads/screenshot3.png"
+                                    alt="Memerist screenshot 3 — export as PNG"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn"
+                        id="prev"
+                        aria-label="Previous"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <button
+                        class="carousel-dot active"
+                        data-idx="0"
+                        aria-label="Screenshot 1"
+                    ></button>
+                    <button
+                        class="carousel-dot"
+                        data-idx="1"
+                        aria-label="Screenshot 2"
+                    ></button>
+                    <button
+                        class="carousel-dot"
+                        data-idx="2"
+                        aria-label="Screenshot 3"
+                    ></button>
+                    <button class="carousel-btn" id="next" aria-label="Next">
+                        <svg
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features-bg" id="features">
+            <div class="section-inner">
+                <p class="section-title">Features</p>
+                <h2 class="section-title"></h2>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Image Import</h3>
+                        <p>
+                            Load any image from your filesystem to use as your
+                            meme template with just a click.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Draggable Text</h3>
+                        <p>
+                            Place classic impact-style meme text anywhere on the
+                            canvas.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Built-in Templates</h3>
+                        <p>
+                            Pick from a library of popular meme templates or
+                            import your own to get started instantly.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Layers</h3>
+                        <p>
+                            Import additional images as layers on top of your
+                            base template.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Different Export Format</h3>
+                        <p>Support 3 file formats. PNG, JPG, and WebP.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Native GNOME Design</h3>
+                        <p>Built the latest Libadwaita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="install">
+            <div class="section-inner">
+                <p class="section-label">Installation</p>
+                <h2 class="section-title">Get Memerist</h2>
+                <p class="section-sub">
+                    Choose the installation method that works best for your
+                    distribution.
+                </p>
+
+                <div class="install-grid">
+                    <div class="install-card">
+                        <h3>
+                            Flathub
+                            <span
+                                style="
+                                    font-size: 0.75rem;
+                                    color: var(--green);
+                                    font-weight: 700;
+                                    background: #d4edda;
+                                    padding: 2px 8px;
+                                    border-radius: 6px;
+                                    margin-left: 4px;
+                                "
+                                >Recommended</span
+                            >
+                        </h3>
+                        <p>The easiest way.</p>
+                        <div class="code-block">
+                            <span class="cmd">flatpak install</span> flathub
+                            io.github.vani_tty1.memerist
+                        </div>
+                        <a
+                            href="https://flathub.org/apps/io.github.vani_tty1.memerist"
+                        >
+                            <img
+                                width="240"
+                                alt="Get it on Flathub"
+                                src="https://flathub.org/api/badge?locale=en"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="install-card">
+                        <h3>Fedora COPR</h3>
+                        <p>
+                            Native RPM package for Fedora users via the COPR
+                            build system.
+                        </p>
+                        <div class="code-block">
+                            <span class="comment"># Enable the COPR repo</span>
+                            <br />
+                            <span class="cmd">sudo dnf copr enable</span>
+                            vaniiiiii/memerist
+                            <br />
+                            <span class="cmd">sudo dnf install</span> memerist
+                        </div>
+                        <a
+                            class="btn btn-secondary"
+                            href="https://copr.fedorainfracloud.org/coprs/vaniiiiii/memerist/"
+                            target="_blank"
+                            rel="noopener"
+                            style="
+                                width: fit-content;
+                                color: var(--text);
+                                border-color: var(--border);
+                            "
+                        >
+                            Open COPR Page
+                        </a>
+                    </div>
+
+                    <div class="install-card" style="grid-column: 1 / -1">
+                        <h3>Build from Source</h3>
+                        <p>
+                            Build it yourself.
+                        </p>
+                        <div class="code-block">
+                            <span class="comment"
+                                ># Install dependencies:
+                            </span>
+                            <br />
+                            gtk4-devel
+                            libadwaita-devel meson ninja-build libepoxy-devel
+                            blueprint-compiler
+                            <br />
+                            <span class="comment"># Clone and build</span>
+                            <br />
+                            <span class="cmd">git clone</span>
+                            https://github.com/vani-tty1/memerist.git
+                            <br />
+                            <span class="cmd">cd</span> memerist
+                            <br />
+                            <span class="comment"># builds and launches</span>
+                            <br />
+                            <span class="cmd">make run</span>
+                        </div>
+                        <a
+                            class="btn btn-secondary"
+                            href="https://github.com/vani-tty1/memerist"
+                            target="_blank"
+                            rel="noopener"
+                            style="
+                                width: fit-content;
+                                color: var(--text);
+                                border-color: var(--border);
+                            "
+                        >
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="community-band">
+            <h2>Join the community</h2>
+            <p>
+                Memerist is free and open source. Contributions, bug reports and
+                feature ideas are always welcome.
+            </p>
+            <div class="community-links">
+                <a
+                    class="btn btn-primary"
+                    href="https://github.com/vani-tty1/memerist/discussions"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        style="width: 18px; height: 18px"
+                    >
+                        <path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                        />
+                    </svg>
+                    Discussions
+                </a>
+                <a
+                    class="btn btn-secondary"
+                    href="https://github.com/vani-tty1/memerist/issues"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        style="width: 18px; height: 18px"
+                    >
+                        <circle cx="12" cy="12" r="10" />
+                        <line
+                            x1="12"
+                            y1="8"
+                            x2="12"
+                            y2="12"
+                            stroke="#fff"
+                            stroke-width="2"
+                            fill="none"
+                        />
+                        <line
+                            x1="12"
+                            y1="16"
+                            x2="12.01"
+                            y2="16"
+                            stroke="#fff"
+                            stroke-width="2"
+                            fill="none"
+                        />
+                    </svg>
+                    Report an Issue
+                </a>
+                <a
+                    class="btn btn-secondary"
+                    href="https://github.com/vani-tty1/memerist/pulls"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        style="width: 18px; height: 18px"
+                    >
+                        <circle cx="18" cy="18" r="3" />
+                        <circle cx="6" cy="6" r="3" />
+                        <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+                        <line x1="6" y1="9" x2="6" y2="21" />
+                    </svg>
+                    Contribute
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="foot-links">
+                    <a
+                        href="https://github.com/vani-tty1/memerist"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                    <a
+                        href="https://flathub.org/apps/details/io.github.vani_tty1.memerist"
+                        target="_blank"
+                        rel="noopener"
+                        >Flathub</a
+                    >
+                    <a
+                        href="https://github.com/vani-tty1/memerist/blob/main/LICENSE"
+                        target="_blank"
+                        rel="noopener"
+                        >License</a
+                    >
+                    <a
+                        href="https://github.com/vani-tty1/memerist/releases"
+                        target="_blank"
+                        rel="noopener"
+                        >Releases</a
+                    >
+                </div>
+                <p class="foot-copy">Memerist</p>
+            </div>
+        </footer>
+
+        <script src="/src/js/memerist.js"></script>
+    </body>
+</html>
