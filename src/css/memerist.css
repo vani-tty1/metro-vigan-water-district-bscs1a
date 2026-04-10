@@ -34,10 +34,12 @@ body {
 
 header {
   background: var(--header-bg);
+  background-color: var(--header-bg);
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,.06);
+  isolation: isolate; 
 }
 
 .header-inner {

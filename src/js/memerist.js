@@ -1,15 +1,17 @@
+//joshua luzano is gay
+
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector('header');
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.9)';
+                header.style.background = 'rgba(36, 39, 58, 0.92)'; 
                 header.style.backdropFilter = 'blur(10px)';
-                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.2)';
             } else {
-                header.style.background = '#ffffff';
-                header.style.backdropFilter = 'none';
-                header.style.boxShadow = 'none';
+              header.style.background = '#24273a'; 
+              header.style.backdropFilter = 'none';
+              header.style.boxShadow = 'none';
             }
         });
     }
