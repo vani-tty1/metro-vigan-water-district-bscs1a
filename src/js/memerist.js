@@ -1,9 +1,10 @@
 const track = document.getElementById('track');
 const dots  = document.querySelectorAll('.carousel-dot');
 let current = 0;
+const totalSlides = dots.length;
 
 function goTo(idx) {
-  current = (idx + 3) % 3;
+  current = (idx + totalSlides) % totalSlides;
   track.style.transform = `translateX(calc(-${current * 100}% - ${current * 20}px))`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
 }
